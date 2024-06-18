@@ -2,7 +2,7 @@
 <p> My name is <a href ="https://www.linkedin.com/in/rachelirabor/">Rachel Irabor</a>, and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. <p></p>
 <br>
 
-Subscribe for the latest newsletters and articles from my Medium and LinkedIn accounts.
+Subscribe for the latest <a href ="https://www.linkedin.com/newsletters/ms-business-applications-7056225625308553216/">newsletters</a> and <a href = https://rachelirabor8.medium.com>articles</a> from my Medium and LinkedIn accounts.
 
 
 
@@ -15,7 +15,7 @@ This can work when an item is created in SharePoint list A and you want the data
 
 
 <h2> <b>Use Case: Bank Customer Complaint Management</b></h2>
-To illustrate the process, consider this example scenario:
+<p>To illustrate the process, consider this example scenario:
 
 Bank ABC operates a Customer Complaint Management System with various teams handling different categories of customer complaints.
 
@@ -24,8 +24,8 @@ They utilize a SharePoint list named 'Customer Complaints'. Whenever a new item 
 
 
 Disclaimer: This is not an actual bank, but a scenario I created.
+</p>
 
-gi
 
 <h3> <b>Actions to add to your flow to make it possible to save an attachment from SharePoint list A to SharePoint list B</b></h3>
 
@@ -37,3 +37,14 @@ gi
 
 <br>
 <p> In this context, the Customer Complaint will be referred to as SharePoint list A, and the Customer Support Database will be known as SharePoint list B. This distinction is intended to minimize confusion. </p>
+
+
+<p><b>Prerequisites</p></b>
+<p> Have a Power Automate license/ Developer Account or access to use Power Automate.</p>
+
+<br>
+
+<h2><strong>Step by Step Process </strong></h2>
+1. Go to <a href = "https://make.powerautomate.com/">Power Automate</a>
+
+![figure2.png](images/figure2.png)
