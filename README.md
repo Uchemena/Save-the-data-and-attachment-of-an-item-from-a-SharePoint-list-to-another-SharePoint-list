@@ -46,7 +46,7 @@ Have a Power Automate license/ Developer Account or access to use Power Automate
 
 <h2><strong>Step by Step Process </strong></h2>
 
-```markdown
+
 
 1. Go to <a href = "https://make.powerautomate.com/">Power Automate</a>
 
@@ -63,7 +63,7 @@ Figure 3: The Power Automate Home Screen displays a red arrow directing attentio
 ![figure4.png](Images/figure4.png)
 Figure 4: Power Automate Create Screen.
 
-3. At the middle of the screen, click on Automated cloud flow. Next, on Flow name add the name of the flow, here I will be using Populate Database Complaint Management.
+3. At the middle of the screen, click on Automated cloud flow. Next, on Flow name add the name of the flow, here I will be using Populate Customer Support Database.
 
 On Choose your flow's trigger, select the trigger When an item is created. Click on Create.
 
@@ -77,9 +77,17 @@ Figure 6: Power Automate flow trigger: When an item is created or modified. The 
 ![figure7](Images/figure7.png)
 Figure 7: When an item is created trigger.
 
-4. On the trigger 'When an item is created or modified', select your SharePoint site and SharePoint list. Click on the drop-down icon next to Site Address to choose your SharePoint site, and then click on the drop-down icon next to List Name to select your SharePoint list.
+4. On the trigger 'When an item is created', select your SharePoint site and SharePoint list. Click on the drop-down icon next to Site Address to choose your SharePoint site, and then click on the drop-down icon next to List Name to select your SharePoint list.
 
 ![figure8](Images/figure8.png)
 Figure 8: A red arrow pointing to the selected SharePoint site and SharePoint list in the trigger when an item is created.
 
-markdown```
+Note: The flow is triggered when an item is created in the Customer Complaint SharePoint list (SharePoint List A).
+
+5. Click "+New step", then search and add the Condition action.
+
+![figure9.png](Images/figure9.png)
+Figure 9: A red arrow points to +New step.
+
+![figure10.png](Images/figure10.png)
+Figure 10: Choose an operation: A red arrow points to the Condition action.
