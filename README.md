@@ -45,6 +45,39 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 <br>
 
 <h2><strong>Step by Step Process </strong></h2>
+```markdown
 1. Go to <a href = "https://make.powerautomate.com/">Power Automate</a>
 
-![figure2.png](images/figure2.png)
+![figure2.png](Images/figure2.png)
+
+Figure 2: Power Automate Home Screen.
+
+2. At the left side of the screen, click on Create.
+
+![figure3.png](Images/figure3.png.png)
+Figure 3: The Power Automate Home Screen displays a red arrow directing attention to 'Create' on the left side of the screen.
+
+
+![figure4.png](Images/figure4.png.png)
+Figure 4: Power Automate Create Screen.
+
+3. <p>At the middle of the screen, click on Automated cloud flow. Next, on Flow name add the name of the flow, here I will be using Populate Database Complaint Management.
+<br>
+On Choose your flow's trigger, select the trigger When an item is created. Click on Create.</p>
+
+
+![figure5.png](Images/figure5.png.png)
+Figure 5: A red arrow pointing to Automated cloud flow in the Power Automate Create screen.
+
+![figure6.png](Images/figure6.png.png)
+Figure 6: Power Automate flow trigger: When an item is created or modified. The arrow points to where to write the flow's name, the trigger to choose, and where to click Create.
+
+![figure7](Images/figure7.png.png)
+Figure 7: When an item is created trigger.
+
+4. On the trigger 'When an item is created or modified', select your SharePoint site and SharePoint list. Click on the drop-down icon next to Site Address to choose your SharePoint site, and then click on the drop-down icon next to List Name to select your SharePoint list.
+
+![figure8](Images/figure8.png.png)
+Figure 8: A red arrow pointing to the selected SharePoint site and SharePoint list in the trigger when an item is created.
+
+markdown```
