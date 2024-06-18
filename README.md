@@ -1,5 +1,5 @@
 # Save-the-data-and-attachment-of-an-item-from-a-SharePoint-list-to-another-SharePoint-list
-<p> My name is [Rachel Irabor](https://www.linkedin.com/in/rachelirabor/), and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. <p></p>
+<p> My name is <a href ="https://www.linkedin.com/in/rachelirabor/">Rachel Irabor</a>, and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. <p></p>
 <br>
 
 Subscribe for the latest newsletters and articles from my Medium and LinkedIn accounts.
@@ -14,7 +14,7 @@ This can work when an item is created in SharePoint list A and you want the data
 
 
 
-# # Use Case: Bank Customer Complaint Management
+<h2> <b>Use Case: Bank Customer Complaint Management</b></h2>
 To illustrate the process, consider this example scenario:
 
 Bank ABC operates a Customer Complaint Management System with various teams handling different categories of customer complaints.
@@ -25,5 +25,15 @@ They utilize a SharePoint list named 'Customer Complaints'. Whenever a new item 
 
 Disclaimer: This is not an actual bank, but a scenario I created.
 
+gi
 
+<h3> <b>Actions to add to your flow to make it possible to save an attachment from SharePoint list A to SharePoint list B</b></h3>
 
+1. Get Attachment action
+
+2. Get Attachment Content Action
+
+3. Add Attachment Action
+
+<br>
+<p> In this context, the Customer Complaint will be referred to as SharePoint list A, and the Customer Support Database will be known as SharePoint list B. This distinction is intended to minimize confusion. </p>
