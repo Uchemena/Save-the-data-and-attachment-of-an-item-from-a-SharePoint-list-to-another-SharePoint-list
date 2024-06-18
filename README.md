@@ -1,19 +1,20 @@
 # Save-the-data-and-attachment-of-an-item-from-a-SharePoint-list-to-another-SharePoint-list
-<p> My name is Rachel Irabor, and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. <p></p>
+<p> My name is [Rachel Irabor](https://www.linkedin.com/in/rachelirabor/), and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. <p></p>
+<br>
 
 Subscribe for the latest newsletters and articles from my Medium and LinkedIn accounts.
 
 
 
-If you're working on a solution to save an attachment file from one SharePoint List to another, or need to save the data and attachment of an item from a SharePoint list to a different SharePoint list, check out this blog post.
+<p>If you're working on a solution to save an attachment file from one SharePoint List to another, or need to save the data and attachment of an item from a SharePoint list to a different SharePoint list, check out this blog post </p>.
 
-
+<br>
 
 This can work when an item is created in SharePoint list A and you want the data and attachment created to be saved in another SharePoint list when a condition is met. 
 
 
 
-Use Case: Bank Customer Complaint Management
+# # Use Case: Bank Customer Complaint Management
 To illustrate the process, consider this example scenario:
 
 Bank ABC operates a Customer Complaint Management System with various teams handling different categories of customer complaints.
