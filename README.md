@@ -1,4 +1,4 @@
-# Save-the-data-and-attachment-of-an-item-from-a-SharePoint-list-to-another-SharePoint-list
+# Save the-data and attachment of an-item from a SharePoint list to another SharePoint list
 My name is <a href ="https://www.linkedin.com/in/rachelirabor/">Rachel Irabor</a>, and I’m an MVP for Microsoft Business Application, Power Platform and Dynamics 365 CRM developer and trainer. I love to document what I have learned or encountered. 
 
 
