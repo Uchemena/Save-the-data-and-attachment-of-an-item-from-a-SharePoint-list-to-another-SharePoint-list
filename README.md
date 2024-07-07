@@ -1,17 +1,20 @@
-# Save the data and attachment of an-item from a SharePoint list to another SharePoint list
+# Save the data and attachment of an item from a SharePoint list to another SharePoint list
 
 Working on a solution to save an attachment file from one SharePoint List to another, or need to save the data and attachment of an item from a SharePoint list to a different SharePoint list, check out this blog post.
 
-In this blog post, I will show how you can use Power Automate to save an item and attachment as a link from SharePoint list A to SharePoint list B. You can also download this Power Automate flow.
-
+In this blog post, I will show how you can use Power Automate to save an item and attachment as a link from SharePoint list A to SharePoint list B. 
 
 
 This can work when an item is created in SharePoint list A and you want the data and attachment created to be saved in another SharePoint list when a condition is met. 
 
+The Power Automate is in this Repository, you can easily download and change the connections in the Triggers and actions to your SharePoint site and list. 
+
+**Note:** This step can be used where a SharePoint List are in the SharePoint Site or where the SharePoint List are in different SharePoint Sites. 
 
 
 
-### Use Case: Contoso Bank Customer Complaint Management
+
+### Use Case: Bank Customer Complaint Management
 
 To illustrate the process, consider this example scenario:
 
@@ -45,9 +48,9 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 In this context, the Customer Complaint will be referred to as SharePoint list A, and the Customer Support Database will be known as SharePoint list B. This distinction is intended to minimize confusion. 
 
 
-**Prerequisites**
-Have a Power Automate license/ Developer Account or access to use Power Automate.
-SharePoint Document Library (this will be used to save the attachment gotten from SharePoint List A and saved as a Link in SharePoint List B). 
+#### Prerequisites
+- Have a Power Automate license or access to use Power Automate.
+- SharePoint Document Library (this will be used to save the attachment gotten from SharePoint List A and saved as a Link in SharePoint List B). 
 <br>
 
 # Step by Step Process 
@@ -100,6 +103,7 @@ Figure 9: A red rectangle showing the Initialize variable and a red arrow pointi
 6. In the **Name** field of the Initialize variable action add a word text and then the Type change to it String, this can be shown in the screenshot below. 
 
 ![figure10.png](/Images/figure10.png)
+Figure 10:
 
 7. Click "+New step", then search and add the Condition action.
 
@@ -132,6 +136,60 @@ Figure13:
 Figure 14: A red arrow pointing to the Dynamics Content **ID** in the Id field of the Get attachments action.
 
 11. Click on **Add an action**, search and add the action **Apply to each**.
+
+![figure15.png](/Images/figure15.png)
+Figure 15:
+
+
+12. In the **Apply to each** action where we have **Select an output from previous steps**  go to your Dynamic content and select body (this is coming from the Get attachments action).
+
+
+![figure16.png](/Images/figure16.png)
+Figure 16:
+
+
+![figure17.png](/Images/figure17.png)
+
+
+
+13. In the Apply to each action, click on **Add an action** and search and add the action **Get attachment content**. In the Get attachment content, select your SharePoint Site and SharePoint list (here we are getting the content of the attachment from the SharePoint list).
+
+
+![figure18.png](/Images/figure18.png)
+Figure 18:
+
+14. In the Get attachment content action, on Id
+
+
+![figure19.png](/Images/figure19.png)
+Figure 19:
+
+15. In the Apply to each action, click on Add an action, search and add the action **Create file** (this is SharePoint action). In the Site Address select your SharePoint site. This is will save the attachments gotten in SharePoint list A. 
+
+
+![figure20.png](/Images/figure20.png)
+Figure 20:
+
+16. In the Create file action, on Folder path; click on the **folder icon** and then select your Document library. Here I will be selecting the folder Customers Complaint Database 
+
+
+![figure21.png](/Images/figure21.png)
+Figure 21:
+
+17. In the Create file action, on the **File Name** field go to the Dynamic content and select DisplayName (this is coming from the action, Get attachments) the result is shown in figure 22. In the **File Content** field, go to the Dynamic content and select Attachment Content (this is coming from the action, Get attachment content). 
+
+
+![figure22.png](/Images/figure22.png)
+Figure 22:
+
+
+18. Inside the Apply to each action, **click on Add an action** search and add the action **Create sharing link for a file or folder** (this is coming from the SharePoint action). Here we will be getting our SharePoint Document library. In the Site Address, select your SharePoint site, in the Library Name, select your SharePoint Document Library (For me this is Customers Complaint Database). 
+
+
+![figure23.png](/Images/figure23.png)
+Figure 23:
+
+
 
 
 9. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
