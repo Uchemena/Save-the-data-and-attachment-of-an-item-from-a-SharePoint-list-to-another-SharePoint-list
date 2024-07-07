@@ -120,6 +120,19 @@ Next, modify 'Is equal to' to 'contains' as shown in figure 12.
 Figure 12: A red point to the Choose a value at the right side of the Condition action and another red arrows point to the Dynamic content "Type of Complaint Value". In the middle of the Condition action, a red arrow points to contains and at the right side of the Condition action a red arrow points to the word "Alert".
 
 
+9. In the If yes of the Condition action, click on **Add an action**. Search and add the action **Get attachments**. Here, we will getting the attachment saved in SharePoint List A. In the Get attachments action, on Site Address select your SharePoint site and on List Name, select your SharePoint list name. 
+
+![figure13.png](/Images/figure13.png)
+Figure13: 
+
+10. In the Get attachments action, on Id field go to the Dynamic content and ID (this is coming from the trigger), this is shown in the screenshot below. 
+
+
+![figure14.png](/Images/figure14.png)
+Figure 14: A red arrow pointing to the Dynamics Content **ID** in the Id field of the Get attachments action.
+
+11. Click on **Add an action**, search and add the action **Apply to each**.
+
 
 9. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
 
