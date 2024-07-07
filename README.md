@@ -189,8 +189,23 @@ Figure 22:
 ![figure23.png](/Images/figure23.png)
 Figure 23:
 
+19. In the Create sharing link for a file or folder, on Item Id; go to the Dynamic content, search and add the dynamic content **ItemId**. On **Link Type** click on the drop-down and select View and edit. On **Link Scope** click on the drop-down icon and select **People in your organization**.
+
+![figure24.png](/Images/figure24.png)
+Figure 24: 
 
 
+20. Inside the Apply to each action, click on Add an action, search and add the action **Compose**. 
+
+
+![figure25.png](/Images/figure25.png)
+Figure 25:
+
+21. 
+
+```html
+<a href ="Link">Name</a><br>
+```
 
 9. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
 
