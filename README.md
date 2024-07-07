@@ -32,11 +32,11 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 
 -  When an item is created
 
--  Initialize Variable
+-  Initialize variable
 
 - Condition 
      - Get Attachments
-     - Apply to each (renamed to For each)
+     - Apply to each
        - Get attachment content 
        - Create file 
        - Create sharing link for a file or folder
@@ -51,6 +51,7 @@ In this context, the Customer Complaint will be referred to as SharePoint list A
 #### Prerequisites
 - Have a Power Automate license or access to use Power Automate.
 - SharePoint Document Library (this will be used to save the attachment gotten from SharePoint List A and saved as a Link in SharePoint List B). 
+- Have a Multiple line of text column in SharePoint list B and text format is rich text. This column will be used for the link of the attachment saved in SharePoint list B. 
 <br>
 
 # Step by Step Process 
@@ -201,13 +202,36 @@ Figure 24:
 ![figure25.png](/Images/figure25.png)
 Figure 25:
 
-21. 
+21. In the Compose action, add the copy and paste the HTML hyperlink below. 
 
 ```html
 <a href ="Link">Name</a><br>
 ```
+![figure26.png](/Images/figure26.png)
+Figure 26:
 
-9. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
+
+22. In the Compose action, where we have Link remove it and go to Dynamic content, search and add the dynamic content **Sharing Link** (this is coming from the action create sharing link for a file or folder). Next, in the HTML hyperlink, remove the Name text and add the dynamic content **Display Name** (this is coming from the action, Get attachments).
+
+![figure27.png](/Images/figure27.png)
+Figure 27: 
+
+
+23. After the Compose action, inside the Apply to each action click on Add an action, search and add the action **Append to string variable**. Append to string variable; In the Name field, click on the drop-down icon and select Attachment (this is a variable coming from Initialize variable). In Value, go to dynamic content and select the output coming the **Compose** action, this is shown in figure 28. 
+
+
+![figure28.png](/Images/figure28.png)
+Figure 28:
+
+
+24. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the Apply to each action, click on **Add an action**, search and add the action **Create item** (this is an action from SharePoint). 
+
+![figure29.png](/Images/figure29.png)
+Figure 29: The Create item action with the SharePoint site and list selected. 
+
+
+
+25. 
 
 
 Now, let's add the data from the columns we wish to save from the Customer Complaint (SharePoint list A) to the Customer Support Database (SharePoint list B). Create item action; in the 'AccountNumber' field, from the dynamic content, search and select the 'AccountNumber' dynamic content (originating from the trigger when an item is created).
