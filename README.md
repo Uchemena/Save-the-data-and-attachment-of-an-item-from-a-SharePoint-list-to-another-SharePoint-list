@@ -1,7 +1,8 @@
 # Save the data and attachment of an-item from a SharePoint list to another SharePoint list
+
 Working on a solution to save an attachment file from one SharePoint List to another, or need to save the data and attachment of an item from a SharePoint list to a different SharePoint list, check out this blog post.
 
-In this blog post, I will show how you can use Power Automate to save an item and attachment from SharePoint list A to SharePoint list B 
+In this blog post, I will show how you can use Power Automate to save an item and attachment as a link from SharePoint list A to SharePoint list B. You can also download this Power Automate flow.
 
 
 
@@ -10,7 +11,8 @@ This can work when an item is created in SharePoint list A and you want the data
 
 
 
-<h2> <b>Use Case: Contoso Bank Customer Complaint Management</b></h2>
+### Use Case: Contoso Bank Customer Complaint Management
+
 To illustrate the process, consider this example scenario:
 
 Bank ABC operates a Customer Complaint Management System with various teams handling different categories of customer complaints.
@@ -23,20 +25,20 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 <br>
 
 
-<h3> <b>Trigger and Actions used in the flow</b></h3>
+### Trigger and Actions used in the flow 
 
-- 1. When an item is created
+-  When an item is created
 
-- 2. Initialize Variable
+-  Initialize Variable
 
-- 3. Get Items
+-  Get Items
 
-- 4. Condition 
+- Condition 
      - Get Attachments
      - For each
-       - Get attachment Content 
-       - Create File 
-       - Create Sharing link for a file or folder
+       - Get attachment content 
+       - Create file 
+       - Create sharing link for a file or folder
        - Compose
        - Append to string variable
        - Create Item
@@ -45,12 +47,12 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 In this context, the Customer Complaint will be referred to as SharePoint list A, and the Customer Support Database will be known as SharePoint list B. This distinction is intended to minimize confusion. 
 
 
-<b>Prerequisites</b>
+**Prerequisites**
 Have a Power Automate license/ Developer Account or access to use Power Automate.
-
+SharePoint Document Library (this will be used to save the attachment gotten from SharePoint List A and saved as a Link in SharePoint List B). 
 <br>
 
-<h2><strong>Step by Step Process </strong></h2>
+# Step by Step Process 
 
 
 
