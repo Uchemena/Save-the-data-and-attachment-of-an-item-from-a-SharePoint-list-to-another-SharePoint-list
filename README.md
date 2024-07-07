@@ -31,11 +31,9 @@ Disclaimer: This is not an actual bank, but a scenario I created.
 
 -  Initialize Variable
 
--  Get Items
-
 - Condition 
      - Get Attachments
-     - For each
+     - Apply to each (renamed to For each)
        - Get attachment content 
        - Create file 
        - Create sharing link for a file or folder
@@ -62,14 +60,16 @@ SharePoint Document Library (this will be used to save the attachment gotten fro
 
 Figure 2: Power Automate Home Screen.
 
+
 2. At the left side of the screen, click on Create.
 
 ![figure3.png](Images/figure3.png)
 Figure 3: The Power Automate Home Screen displays a red arrow directing attention to 'Create' on the left side of the screen.
-
+<br> <br>
 
 ![figure4.png](Images/figure4.png)
 Figure 4: Power Automate Create Screen.
+
 
 3. At the middle of the screen, click on Automated cloud flow. Next, on Flow name add the name of the flow, here I will be using Populate Customer Support Database.
 
@@ -80,7 +80,7 @@ On Choose your flow's trigger, select the trigger When an item is created. Click
 Figure 5: A red arrow pointing to Automated cloud flow in the Power Automate Create screen.
 
 ![figure6.png](Images/figure6.png)
-Figure 6: Power Automate flow trigger: When an item is created or modified. The arrow points to where to write the flow's name, the trigger to choose, and where to click Create.
+Figure 6: Power Automate flow trigger: When an item is created. The arrow points to where to write the flow's name, the trigger to choose, and where to click Create.
 
 ![figure7](Images/figure7.png)
 Figure 7: When an item is created trigger.
@@ -92,34 +92,36 @@ Figure 8: A red arrow pointing to the selected SharePoint site and SharePoint li
 
 Note: The flow is triggered when an item is created in the Customer Complaint SharePoint list (SharePoint List A).
 
-5. Click "+New step", then search and add the Condition action.
+5. Click on +New step, then search and add the action **Initialize variable**. 
 
-![figure9.png](Images/figure9.png)
-Figure 9: A red arrow points to +New step.
+![figure9.png](/Images/figure9.png)
+Figure 9: A red rectangle showing the Initialize variable and a red arrow pointing to the search bar for connectors and actions. 
 
-![figure10.png](Images/figure10.png)
-Figure 10: Choose an operation: A red arrow points to the Condition action.
+6. In the **Name** field of the Initialize variable action add a word text and then the Type change to it String, this can be shown in the screenshot below. 
+
+![figure10.png](/Images/figure10.png)
+
+7. Click "+New step", then search and add the Condition action.
 
 ![figure11.png](/Images/figure11.png)
 Figure 11: The Condition action.
 
-6. In the Condition action, click on "Choose a value" on the left side of the Condition action. In the Dynamic content section, search and add the choice column you wish to base your condition on. For this example, I will select "Type of Complaint Value".
 
-Next, on Choose a Value on the right side, here I will write Alert as shown in figure 11. (We have options in the 'Type of Customer Complaint' choice column, but in this case, I want the flow to execute under the condition that whenever an item is created in the Customer Complaint SharePoint list and 'Alert' is selected as the type of complaint, the item and its attachment should be saved to the Customer Support Database).
+8. On the left-side of the Condition action "Choose a value". In the Dynamic content section, search and add the choice column you wish to base your condition on. For this example, I will select "Type of Complaint Value" (this is coming from the trigger when an item is created).
 
-Next, modify 'Is equal to' to 'contains' as shown in figure 14.
+Next, on Choose a Value on the right side, here I will write Alert as shown in figure 12. 
+
+Note: We have options in the 'Type of Customer Complaint' choice column, but in this case, I want the flow to execute under the condition that whenever an item is created in the Customer Complaint SharePoint list and 'Alert' is selected as the type of complaint, the item and its attachment should be saved to the Customer Support Database.
+
+Next, modify 'Is equal to' to 'contains' as shown in figure 12.
+<br>
 
 ![figure12.png](/Images/figure12.png)
-Figure 12: A red point to the Choose a value at the right side of the Condition action and another red arrows point to the Dynamic content "Type of Complaint Value".
-
-![figure13.png](/Images/figure13.png)
-Figure 13: In the middle of the Condition action, a red arrow points to contains and at the right side of the Condition action a red arrow points to the word "Alert".
+Figure 12: A red point to the Choose a value at the right side of the Condition action and another red arrows point to the Dynamic content "Type of Complaint Value". In the middle of the Condition action, a red arrow points to contains and at the right side of the Condition action a red arrow points to the word "Alert".
 
 
-7. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
+
+9. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the If yes of the Condition action, click on Add an action. Search and add the action Create item. On Site address and List name, select the SharePoint list you need to save the data and attachment to (which is SharePoint list B).
 
 
 Now, let's add the data from the columns we wish to save from the Customer Complaint (SharePoint list A) to the Customer Support Database (SharePoint list B). Create item action; in the 'AccountNumber' field, from the dynamic content, search and select the 'AccountNumber' dynamic content (originating from the trigger when an item is created).
-
-![figure14.png](/Images/figure14.png)
-
