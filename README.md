@@ -164,7 +164,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
    ![figure17.png](/Images/figure17.png)
-   Figure 17:
+   Figure 17: Apply to each action with the dynamic content body seleected. 
 
 
 
@@ -172,21 +172,21 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
    ![figure18.png](/Images/figure18.png)
-   Figure 18:
+   Figure 18: The action, Get attachment content with the SharePoint site and list selected. 
 
 14. In the Get attachment content action, on Id
 
 
    ![figure19.png](/Images/figure19.png)
-   Figure 19:
+   Figure 19: The Get attacment content action with the dynamic contents ID and Id selected. 
 
-15. In the Apply to each action, click on Add an action, search and add the action **Create file** (this is SharePoint action). In the Site Address select your SharePoint site. This is will save the attachments gotten in SharePoint list A. 
+15. In the Apply to each action, click on **Add an action**, search and add the action **Create file** (this is SharePoint action). In the Site Address select your SharePoint site. This is will save the attachments gotten in SharePoint list A. 
 
 
    ![figure20.png](/Images/figure20.png)
-   Figure 20:
+   Figure 20: The action, Create file.
 
-16. In the Create file action, on Folder path; click on the **folder icon** and then select your Document library. Here I will be selecting the folder Customers Complaint Database 
+16. In the Create file action, on Folder path; click on the **folder icon** and then select your Document library. Here I will be selecting the folder Customers Complaint Database.
 
 
    ![figure21.png](/Images/figure21.png)
