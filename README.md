@@ -137,12 +137,13 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
    ![figure12.png](/Images/figure12.png)
    Figure 12: A red arrow points to the Choose a value at the right-side of the Condition action and another red arrows point to the Dynamic content "Type of Complaint Value". In the middle of the Condition action, a red arrow points to contains and at the right side of the Condition action a red arrow points to the word "Alert".
-
+<br>
 
 9. In the If yes of the Condition action, click on **Add an action**. Search and add the action **Get attachments**. Here, we will getting the attachment saved in SharePoint List A. In the Get attachments action, on Site Address select your SharePoint site and on List Name, select your SharePoint list name. 
 
    ![figure13.png](/Images/figure13.png)
    Figure13: Get attachment action; a red arrow showing where the SharePoint site and list has been selected.
+
 
 10. The Get attachments action; on Id field go to the Dynamic content and search and select **ID** (this is coming from the trigger, when an item is created), this is shown in figure 14. 
 
@@ -203,12 +204,13 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
    ![figure23.png](/Images/figure23.png)
-   Figure 23: 
+   Figure 23: The action, Create sharing link for a file or folder with the SharePoint site and document library selected.
+
 
 19. In the Create sharing link for a file or folder, on Item Id; go to the Dynamic content, search and add the dynamic content **ItemId**. On **Link Type** click on the drop-down and select View and edit. On **Link Scope** click on the drop-down icon and select **People in your organization**.
 
    ![figure24.png](/Images/figure24.png)
-   Figure 24: The Create sharing link for a file or folder action with the SharePoint site and list selected.
+   Figure 24: The Create sharing link for a file or folder action.
 
 
 20. Inside the Apply to each action, click on Add an action, search and add the action **Compose**. 
@@ -217,7 +219,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
    ![figure25.png](/Images/figure25.png)
    Figure 25: Compose action
 
-21. In the Compose action, add the copy and paste the HTML hyperlink below. 
+21. In the Compose action, copy and paste the HTML hyperlink below. 
 
 ```html
 <a href ="Link">Name</a><br>
@@ -246,14 +248,15 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
 
-25. Now, let's add the data from the columns we wish to save from the Customer Complaint (SharePoint list A) to the Customer Support Database (SharePoint list B). Create item action; in the 'AccountNumber' field, from the dynamic content, search and select the 'AccountNumber' dynamic content originating from the trigger when an item is created.
+25. Now, let's add the data from the columns we wish to save from the Customer Complaint (SharePoint list A) to the Customer Support Database (SharePoint list B). Create item action; in the 'AccountNumber' field, from the dynamic content, search and select the 'AccountNumber' dynamic content originating from the trigger when an item is created, repeat the same method of others excluding a choice column. For a choice column, click on the drop-down icon select custom value, go to the dynamic content, search and add your choice column value.
 
    ![figure30.png](/Images/figure30.png)
    Figure 30: Create item action with all the required columns selected. 
 
+
 26. Create Item action; In the Attachment link field go to the dynamic content and select the variable "Attachments" this is coming from the Append to string variable. 
     ![figure31.png](/Images/figure31.png)
-    Figure 31: Create item action,
+    Figure 31: Create item action
 
 <br>
 
@@ -261,9 +264,11 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
     FIgure 32: The create item action, with the variable selected from the Dynamic content.
   
 <br>
-     Now go ahead and save the flow and also test the flow. 
+     Now go ahead and save and test the flow. 
 
 ![figure33.png](/Images/figure33.png)
 Figure 33: The Apply to each action with all the actions added inside it. 
 
-   
+<br>
+
+Thank you for reading!
