@@ -1,12 +1,12 @@
 # Save the data and attachment of an item from a SharePoint list to another SharePoint list
 
-Need to save an item and attachment file from one SharePoint List to another SharePoint, based on a condition using Power Automate? check out this blog post.
+Need to save an item and attachment file from one SharePoint list to another SharePoint list, based on a condition using Power Automate? check out this blog post.
 
-In this blog post, I will show how you can use Power Automate to save an item and attachment from SharePoint list A to SharePoint list B and the attachment will be saved as a link.  
+In this blog post, I will show how you can achieve the goal that whenever an item is created in SharePoint list A and condition is met the item and attachment should be automatically saved in another SharePoint list (SharePoint list B) and the attachment will be saved as a link by using Power Automate. 
 
 
 
-The Power Automate flow is in this Repository, you can easily download and change the connections and connection reference in the trigger and actions to your SharePoint site and list. 
+The Power Automate flow is in this Repository, you can easily download (the zip file is PopulateCustomerSupportDatabase) and change the connections and connection reference in the trigger and actions to your SharePoint site and list. 
 
 **Note:** This step can be used where a SharePoint List are in the same SharePoint Site or where the SharePoint List are in different SharePoint Sites. 
 
@@ -55,9 +55,9 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 #### Prerequisites
 - Have a Power Automate license or access to use Power Automate.
 - SharePoint Document Library (this will be used to save the attachment file gotten from SharePoint List A). 
-- Have a Multiple line of text column in SharePoint list B, where the text format is rich text. This column will be used to save the link of the attachment saved in SharePoint list B. 
+- A Multiple line of text column in SharePoint list B, where the text format is rich text. This column will be used to save the link of the attachment in SharePoint list B. 
 
-**Note:** The reason why we are using multiple line of text data type here instead of hyperlink data type column is because we are expecting more than one Attachment file and the date this blog post was written, hyperlink data type column does not support more than one hyperlink url. 
+**Note:** The reason why we are using a multiple line of text data type here instead of hyperlink data type column is because we are expecting more than one Attachment file and the date this blog post was written, hyperlink data type column does not support more than one hyperlink url. 
 <br>
 
 # Step by Step Process 
@@ -80,7 +80,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
    Figure 4: Power Automate Create Screen.
 
 
-3. At the middle of the screen, click on **Automated cloud flow**. Next, on Flow name add the name of the flow, here I will be using 
+3. At the middle of the screen, click on **Automated cloud flow**. Next, on **Flow name** add the name of the flow, here I will be using 
 
 ``` bash
  Populate Customer Support Database.
@@ -113,10 +113,10 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
    ![figure9.png](/Images/figure9.png)
    Figure 9: A red rectangle showing the Initialize variable. 
 
-6. In the **Name** field of the Initialize variable action add a word text, here I used Attachment. change the type of the initialize variable to String, this can be shown in figure 10. 
+6. In the **Name** field of the Initialize variable action add a word text, here I used Attachment. change the type of the initialize variable to String, this is shown in figure 10. 
 
    ![figure10.png](/Images/figure10.png)
-   Figure 10: The initialize variable
+   Figure 10: The Initialize variable
 
 7. Click **+New step**, then search and add the **Condition** action.
 
@@ -126,13 +126,13 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 8. On the left-side of the Condition action "Choose a value". Go to the Dynamic content, search and add the column you wish to base your condition on. For this example, I will select "Type of Complaint Value" a choice column (this is coming from the trigger when an item is created).
 
-   Next, on Choose a Value on the right side, here I will write Alert as shown in figure 12. 
+   Next, on Choose a Value on the right side, here I will write the text **Alert** as shown in figure 12. 
 
    <br>
 
-   **Note:** We have options in the 'Type of Customer Complaint' choice column, but in this case, I want the flow to execute under the condition that whenever an item is created in the Customer Complaint SharePoint list and 'Alert' is selected as the type of complaint, the item and its attachment should be saved to the Customer Support Database.
+   **Note:** We have options in the 'Type of Customer Complaint' choice column, but in this case, I want the flow to execute under the condition that whenever an item is created in the Customer Complaint SharePoint list and 'Alert' is selected as the type of complaint, the item and its attachment should be saved to the Customer Support Database SharePoint list (SharePoint list B).
 
-   Next, modify 'Is equal to' to 'contains' as shown in figure 12.
+   Next, in the Condition change 'Is equal to' to 'contains' as shown in figure 12.
 <br>
 
    ![figure12.png](/Images/figure12.png)
@@ -144,7 +144,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
    ![figure13.png](/Images/figure13.png)
    Figure13: Get attachment action; a red arrow showing where the SharePoint site and list has been selected.
 
-10. The Get attachments action; on Id field go to the Dynamic content and search and select **ID** (this is coming from the trigger when an item is created), this is shown in figure 14. 
+10. The Get attachments action; on Id field go to the Dynamic content and search and select **ID** (this is coming from the trigger, when an item is created), this is shown in figure 14. 
 
 
     ![figure14.png](/Images/figure14.png)
@@ -160,7 +160,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
    ![figure16.png](/Images/figure16.png)
-   Figure 16:
+   Figure 16: The Apply to each action.
 
 
    ![figure17.png](/Images/figure17.png)
@@ -184,38 +184,38 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 
 
    ![figure20.png](/Images/figure20.png)
-   Figure 20: The action, Create file.
+   Figure 20: The action, Create file with the SharePoint site selected. 
 
 16. In the Create file action, on Folder path; click on the **folder icon** and then select your Document library. Here I will be selecting the folder Customers Complaint Database.
 
 
    ![figure21.png](/Images/figure21.png)
-   Figure 21:
+   Figure 21: Create item action; red rectangle showing a folder icon in the folder path of the Create item action and a red rectangle showing the Document library needed. 
 
 17. In the Create file action, on the **File Name** field go to the Dynamic content and select DisplayName (this is coming from the action, Get attachments) the result is shown in figure 22. In the **File Content** field, go to the Dynamic content and select Attachment Content (this is coming from the action, Get attachment content). 
 
 
    ![figure22.png](/Images/figure22.png)
-   Figure 22:
+   Figure 22:Create file action action with the dynamic content for file name and file content selected.
 
 
-18. Inside the Apply to each action, **click on Add an action** search and add the action **Create sharing link for a file or folder** (this is coming from the SharePoint action). Here we will be getting our SharePoint Document library. In the Site Address, select your SharePoint site, in the Library Name, select your SharePoint Document Library (For me this is Customers Complaint Database). 
+18. Inside the Apply to each action, click on **Add an action** search and add the action **Create sharing link for a file or folder** (this is coming from the SharePoint action). Here we will be getting our SharePoint Document library. In the Site Address, select your SharePoint site, in the Library Name, select your SharePoint Document Library (For me this is Customers Complaint Database). 
 
 
    ![figure23.png](/Images/figure23.png)
-   Figure 23:
+   Figure 23: 
 
 19. In the Create sharing link for a file or folder, on Item Id; go to the Dynamic content, search and add the dynamic content **ItemId**. On **Link Type** click on the drop-down and select View and edit. On **Link Scope** click on the drop-down icon and select **People in your organization**.
 
    ![figure24.png](/Images/figure24.png)
-   Figure 24: 
+   Figure 24: The Create sharing link for a file or folder action with the SharePoint site and list selected.
 
 
 20. Inside the Apply to each action, click on Add an action, search and add the action **Compose**. 
 
 
    ![figure25.png](/Images/figure25.png)
-   Figure 25:
+   Figure 25: Compose action
 
 21. In the Compose action, add the copy and paste the HTML hyperlink below. 
 
@@ -223,42 +223,42 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 <a href ="Link">Name</a><br>
 ```
    ![figure26.png](/Images/figure26.png)
-   Figure 26:
+   Figure 26: The HTML hyperlink inside the Compose action.
 
 
 22. In the Compose action, where we have Link remove it and go to Dynamic content, search and add the dynamic content **Sharing Link** (this is coming from the action create sharing link for a file or folder). Next, in the HTML hyperlink, remove the Name text and add the dynamic content **Display Name** (this is coming from the action, Get attachments).
 
    ![figure27.png](/Images/figure27.png)
-   Figure 27: 
+   Figure 27: The Compose action shows the hyperlink with the dynamic contents selected.
 
 
 23. After the Compose action, inside the Apply to each action click on Add an action, search and add the action **Append to string variable**. Append to string variable; In the Name field, click on the drop-down icon and select Attachment (this is a variable coming from Initialize variable). In Value, go to dynamic content and select the output coming the **Compose** action, this is shown in figure 28. 
 
 
    ![figure28.png](/Images/figure28.png)
-   Figure 28:
+   Figure 28: Append to String variable action.
 
 
 24. Here, we will be storing the items retrieved from the Customer Complaint SharePoint list (SharePoint list A) into the Customer Support Database (SharePoint list B). In the Apply to each action, click on **Add an action**, search and add the action **Create item** (this is an action from SharePoint). 
 
    ![figure29.png](/Images/figure29.png)
-   Figure 29: The Create item action with the SharePoint site and list selected. 
+   Figure 29: The Create item action with the SharePoint site and list selected.
 
 
 
 25. Now, let's add the data from the columns we wish to save from the Customer Complaint (SharePoint list A) to the Customer Support Database (SharePoint list B). Create item action; in the 'AccountNumber' field, from the dynamic content, search and select the 'AccountNumber' dynamic content originating from the trigger when an item is created.
 
    ![figure30.png](/Images/figure30.png)
-   Figure 30:
+   Figure 30: Create item action with all the required columns selected. 
 
 26. Create Item action; In the Attachment link field go to the dynamic content and select the variable "Attachments" this is coming from the Append to string variable. 
     ![figure31.png](/Images/figure31.png)
-    Figure 31: 
+    Figure 31: Create item action,
 
 <br>
 
    ![figure32.png](/Images/figure32.png)
-    FIgure 32:
+    FIgure 32: The create item action, with the variable selected from the Dynamic content.
   
 <br>
      Now go ahead and save the flow and also test the flow. 
