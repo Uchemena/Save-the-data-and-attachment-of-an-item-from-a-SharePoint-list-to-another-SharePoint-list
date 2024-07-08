@@ -240,3 +240,20 @@ In this context, the Customer Complaint will be referred to as SharePoint list A
 
    ![figure30.png](/Images/figure30.png)
    Figure 30:
+
+26. Create Item action; In the Attachment link field go to the dynamic content and select the variable "Attachments" this is coming from the Append to string variable. 
+    ![figure31.png](/Images/figure31.png)
+    Figure 31: 
+
+<br>
+
+   ![figure32.png](/Images/figure32.png)
+    FIgure 32:
+  
+<br>
+     Now go ahead and save the flow and also test the flow. 
+
+![figure33.png](/Images/figure33.png)
+Figure 33: The Apply to each action with all the actions added inside it. 
+
+   
