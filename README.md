@@ -57,7 +57,7 @@ In this context, the Customer Complaint SharePoint list will be referred to as S
 - SharePoint Document Library (this will be used to save the attachment file gotten from SharePoint List A). 
 - A Multiple line of text column in SharePoint list B, where the text format is rich text. This column will be used to save the link of the attachment in SharePoint list B. 
 
-**Note:** The reason why we are using a multiple line of text data type here instead of hyperlink data type column is because we are expecting more than one Attachment file and the date this blog post was written, hyperlink data type column does not support more than one hyperlink url. 
+**Note:** We are using multiple lines of text data type here instead of a hyperlink data type column because we expect more than one Attachment file and the date this blog post was written, hyperlink data type column does not support more than one hyperlink URL.
 <br>
 
 # Step by Step Process 
